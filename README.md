@@ -1,11 +1,15 @@
 ## Installation
-1. Run the Composer install 
-2. Set file permissions to the /tmp folder
+1. Run composer install
+2. Set correct file permissions for the /tmp folder
 3. Open index.php in your browser
 
 ## CLI usage
 
-Just run "php generateCodes.php --numberOfCodes x --lengthOfCode y --file z" from your terminal
+run:
+ 
+php generateCodes.php --numberOfCodes x --lengthOfCode y --file z
+
+where:
 
 x - number of generated codes (range 1-1000000) - REQUIRED ARGUMENT
 

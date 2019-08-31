@@ -5,8 +5,8 @@ namespace CodeGenerator;
 class PostRequestHandler extends CodeGenerationRequest
 {
     private
-        $codesQty,
         $codesLength,
+        $codesQty,
         $fileName,
         $filePath;
 

@@ -20,7 +20,8 @@ abstract class CodeGenerationRequest
 
     protected function validateCodeGenerationRequirements($codesQty, $codesLength)
     {
-        if ($codesQty < self::MIN_CODE_QTY
+        if (
+            $codesQty < self::MIN_CODE_QTY
             || $codesQty > self::MAX_CODE_QTY
             || $codesLength < self::MIN_CODE_LENGTH
             || $codesLength > self::MAX_CODE_LENGTH
@@ -34,13 +35,12 @@ abstract class CodeGenerationRequest
         file_put_contents($filePath, implode("\n", $codesArr) . "\n");
     }
 
-    // There is no duplicates when generating 1M of 10-characters long codes
+    // There is no duplicates when generating 1M of 10-characters codes
     public function generateCode(int $length)
     {
         $code = "";
         $allowedCharacters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         $max = strlen($allowedCharacters);
-
         for ($i = 0; $i < $length; $i++) {
             $code .= $allowedCharacters[random_int(0, $max - 1)];
         }
